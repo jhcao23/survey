@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Application context definition for PetClinic on JPA.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd		
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- ========================= RESOURCE DEFINITIONS ========================= -->
+	
+	<!-- import the dataSource & repository definition -->
+	<import resource="dao-config.xml"/>
+	<import resource="mongo-config.xml"/>
+	
+	<!--
+		- POJOs labeled with the @Service annotations are auto-detected.
+	-->
+	<context:component-scan
+            base-package="org.touchmars.survey.service"/>
+            
+	<!--
+		Instruct Spring to perform declarative transaction management
+		automatically on annotated classes.
+		
+		for mode="aspectj"/ see SPR-6392
+	-->
+	<tx:annotation-driven />
+	
+</beans>

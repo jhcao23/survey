@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:th="http://www.thymeleaf.org"
+		xmlns:dt="http://github.com/dandelion/datatables" 
+  		xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+  		layout:decorator="fragments/layout"	>
+  
+  <body>	  		
+  		<p layout:fragment="page-title">
+  			<h2>Your Exam List</h2>
+  		</p>
+        <div layout:fragment="page-content">     		
+			<table class="table table-stripped" dt:table="true" dt:appear="fadein" dt:cdn="true" dt:info="false" dt:theme="bootstrap2" >
+				<thead>
+                    <tr>
+					    <th>Exam Name</th>					    
+					    <th>#Papers</th>
+					    <th>#Questions</th>					    
+				    </tr>
+                </thead>
+			</table> 			         
+        </div>        
+  </body>      
+</html>
