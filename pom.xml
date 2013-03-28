@@ -34,7 +34,7 @@
 		<!-- Hibernate / JPA -->
         <hibernate.version>4.1.9.Final</hibernate.version>
         <hibernate-jpa.version>1.0.1.Final</hibernate-jpa.version>
-        <querydsl.version>2.9.0</querydsl.version>
+        <querydsl.version>3.1.0</querydsl.version>
         
         <!-- Bean validation -->
         <validation.version>1.0.0.GA</validation.version>
