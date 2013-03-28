@@ -18,14 +18,6 @@
 		- POJOs labeled with the @Service annotations are auto-detected.
 	-->
 	<context:component-scan
-            base-package="org.touchmars.survey.service"/>
-            
-	<!--
-		Instruct Spring to perform declarative transaction management
-		automatically on annotated classes.
-		
-		for mode="aspectj"/ see SPR-6392
-	-->
-	<tx:annotation-driven />
+            base-package="org.touchmars.survey.service"/>       
 	
 </beans>

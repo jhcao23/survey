@@ -19,41 +19,22 @@
 	
 	<mvc:annotation-driven conversion-service="conversionService" />
 	
-	<!--  all resources inside folder src/main/webapp/resources are mapped so they can be refered to inside JSP files
-		(see header.jsp for more details) -->
+	<!--  all resources inside folder src/main/webapp/resources are mapped so they can be refered to inside HTML files
+		(see headTag.html for more details) -->
 	<mvc:resources mapping="/resources/**" location="/resources/"/>
 	
 	<!-- uses WebJars so Javascript and CSS libs can be declared as Maven dependencies (Bootstrap, jQuery...) -->
 	<mvc:resources mapping="/webjars/**" location="classpath:/META-INF/resources/webjars/"/>
 	
 	<mvc:view-controller path="/" view-name="welcome"/>
-	
-    <!-- 
-     
-        [THYMELEAF] The new <mvc:annotation-driven /> tag, as of Spring 3.1, declares a binding initializer
-                    which is incompatible with the declaration of this bean as it was in the original application.
-                    The org.springframework.samples.petclinic.web.ClinicRequestMappingHandlerAdapterCustomizer
-                    class has been created fixing this behaviour.
-                    
-                    See https://jira.springsource.org/browse/SPR-7077
-     
-		- This bean processes annotated handler methods, applying PetClinic-specific PropertyEditors
-		- for request parameter binding. It overrides the default AnnotationMethodHandlerAdapter.
-
-	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="webBindingInitializer">
-			<bean class="org.springframework.samples.petclinic.web.ClinicBindingInitializer"/>
-		</property>
- 	</bean>
-    -->
-    	
+	    	
 	<bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-		<property name="formatters">
-			<set>
-<!-- 				<bean class="org.touchmars.survey.web.PetTypeFormatter" /> -->
-			</set>
-		</property>
-	</bean>
+<!--         <property name="formatters"> -->
+<!--             <set> -->
+<!--                 <bean class="org.springframework.samples.petclinic.web.PetTypeFormatter"/> -->
+<!--             </set> -->
+<!--         </property> -->
+    </bean>
 	
 	<!--
 		- Message source for this context, loaded from localized "messages_xx" files.
@@ -74,13 +55,14 @@
 	-->
 	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<!-- view name resolved using bean of type InternalResourceViewResolver (declared in mvc-view-config.xml) -->
-<!-- 		<property name="defaultErrorView" value="exception"/> results into 'WEB-INF/jsp/exception.jsp'		 -->
-		<property name="warnLogCategory" value="warn"/> <!-- needed otherwise exceptions won't be logged anywhere -->
 		<!-- 
             - [THYMELEAF] We add the default view to be able to process a
             - thymeleaf template when any unexpected error arises 
         -->
         <property name="defaultErrorView" value="uncaughtException"></property>
+        <!-- results into 'WEB-INF/thymeleaf/uncaughtException.jsp' -->
+        <property name="warnLogCategory" value="warn"/> 
+        <!-- needed otherwise exceptions won't be logged anywhere -->		
 	</bean>
 
 </beans>
