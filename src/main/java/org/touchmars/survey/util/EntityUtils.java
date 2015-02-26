@@ -16,9 +16,6 @@
 
 package org.touchmars.survey.util;
 
-import java.util.Collection;
-
-import org.springframework.orm.ObjectRetrievalFailureException;
 
 /**
  * Utility methods for handling entities. Separate from the BaseEntity class mainly because of dependency on the

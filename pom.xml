@@ -20,8 +20,8 @@
        	<spring-data-jpa.version>1.3.0.RELEASE</spring-data-jpa.version>
        	<spring-data-mongodb.version>1.2.0.RELEASE</spring-data-mongodb.version>
  		<!-- John: Thymeleaf -->
- 		<thymeleaf.version>2.0.16</thymeleaf.version>
-		<thymeleaf.layout.dialect.version>1.0.6</thymeleaf.layout.dialect.version>
+ 		<thymeleaf.version>2.0.17</thymeleaf.version>
+		<thymeleaf.layout.dialect.version>1.1.1</thymeleaf.layout.dialect.version>
 
     	<!--  Java EE / Java SE dependencies -->
 <!--         <jsp.version>2.2</jsp.version> -->
@@ -266,7 +266,7 @@
 		      	</exclusions>
 		    </dependency> 
 		    <dependency>
-		    	<groupId>nz.net.ultraq.web.thymeleaf</groupId>
+		    	<groupId>nz.net.ultraq.thymeleaf</groupId>
 		    	<artifactId>thymeleaf-layout-dialect</artifactId>
 		    	<version>${thymeleaf.layout.dialect.version}</version>
 		    	<exclusions>
